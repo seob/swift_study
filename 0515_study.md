@@ -76,3 +76,29 @@ func 구구단(_ num : Int){
 
 구구단(3)
 </pre>
+8. 학점을 입력받아 각각의 등급을 반환해주는 함수 (4.5 = A+,  4.0 = A, 3.5 = B+ ...)
+<pre>
+func getLevel(_ num: Double...) -> String{
+    let result: String
+    var sum: Double = 0.0
+    for point in num{
+        sum += point
+    }
+    sum =  sum/Double(num.count)
+    
+    switch(sum)
+    {
+        case 4.0...4.5 : result =  "A+"
+        case 3.5...4.0 : result =  "A"
+        case 3.0...3.5 : result = "B+"
+        case 2.5...3.0 : result =  "B"
+        case 2.0...2.5 : result =  "C+"
+        case 1.5...2.0 : result = "D"
+        case 0...1.5 : result = "F"
+        default:   result = "F"
+    }
+    
+    return result
+}
+print(getLevel(4.0,3.5,3.0))
+</pre>
