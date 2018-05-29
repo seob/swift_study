@@ -20,6 +20,18 @@ class ViewController: UIViewController {
         }
     }
     
+        //add count func
+    func addCount(){
+        self.totalCount += 1
+        label1.text ="\(totalCount)"
+    }
+    //reset func
+    func resetFunc(){
+        self.totalCount = 0
+        label1.text ="\(totalCount)"
+        
+    }
+    
     let label1 = UILabel(frame: CGRect(x: 150, y: 100, width: 100, height: 100))
     
     override func viewDidLoad() {
